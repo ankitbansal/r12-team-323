@@ -26,7 +26,7 @@
   </li>
   <% @invitations.each do |invitation| %>
     <li data-theme="c">
-      <%= link_to "#{invitation.invited_by.name} invited you to join #{invitation.project.name}", project_path(project), :'data-transition' => 'slide' %>
+      <%= link_to "#{invitation.project.user.name} invited you to join #{invitation.project.name}", :'data-transition' => 'slide' %>
     </li>
   <% end %>
 </ul>

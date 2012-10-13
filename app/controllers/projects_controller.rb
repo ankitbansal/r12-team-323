@@ -11,7 +11,12 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(params[:project])
     @project.owner = current_user
-
+    @project.invitations = params[:invites].values.collect do |invite| 
+                                 invitation = Invitation.new
+                                 invitation.fb_id = JSON.parse(invite)["fb_id"]
+                                 invitation
+                               end
+                                                                
        respond_to do |format|
          if @project.save!
            format.html { redirect_to(@project, :notice => 'Project was successfully created.') }

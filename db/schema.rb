@@ -27,18 +27,21 @@ ActiveRecord::Schema.define(:version => 20121013232535) do
   add_index "comments", ["commentable_type"], :name => "index_comments_on_commentable_type"
   add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
 
+end
+
+ActiveRecord::Schema.define(:version => 20121013213501) do
+
   create_table "friends", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "invitations", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "invited_by_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.integer  "project_id"
     t.boolean  "accepted"
+    t.string   "fb_id"
   end
 
   create_table "projects", :force => true do |t|

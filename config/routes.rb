@@ -53,12 +53,16 @@ R12Team323::Application.routes.draw do
   match "/auth/:provider/callback" => "users#create"
   match 'auth/failure', to: redirect('/')
   match "/signout" => "users#destroy"
-  root :to => 'home#index'
+  resources :todos
+  
   resources :projects do
     get 'dashboard'
     resources :comments
   end
+
   resources :users
+
+  root :to => 'home#index'
 
   # See how all your routes lay out with "rake routes"
 

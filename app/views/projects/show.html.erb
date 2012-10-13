@@ -1,17 +1,6 @@
-<div data-role="content">
+<div data-role="content" class="project-show">
   <div data-role="collapsible-set">
-    <div data-role="collapsible" data-collapsed="false">
-      <h3>
-        Todo
-      </h3>
-      <ul data-role="listview" data-divider-theme="b" data-inset="true">
-        <li data-theme="c">
-        <a href="#page1" data-transition="flip">
-          Button
-        </a>
-        </li>
-      </ul>
-    </div>
+    <%= render :partial => "todo" %>
     <div data-role="collapsible" data-collapsed="false">
       <%= render :partial => 'map' %>
     </div>
@@ -39,17 +28,7 @@
       <h3>
         Twitter
       </h3>
-      <a class="twitter-timeline" href="https://twitter.com/search?q=%23<%= @project.hashtag%>" data-widget-id="257155622414467072">Tweets about #<%= @project.hashtag%></a>
-      <script>
-        !function(d,s,id) {
-          var js,fjs=d.getElementsByTagName(s)[0];
-          if(!d.getElementById(id)) {
-            js=d.createElement(s);
-            js.id=id;js.src="//platform.twitter.com/widgets.js";
-            fjs.parentNode.insertBefore(js,fjs);
-          }
-        }(document,"script","twitter-wjs");
-      </script>
+      
     </div>
   </div>
 </div>

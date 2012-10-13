@@ -6,17 +6,17 @@
         };
         var map = new google.maps.Map(document.getElementById('map_canvas'),
           mapOptions);
-
+      
         var input = document.getElementById('searchTextField');
         var autocomplete = new google.maps.places.Autocomplete(input);
-
+      
         autocomplete.bindTo('bounds', map);
-
+      
         var infowindow = new google.maps.InfoWindow();
         var marker = new google.maps.Marker({
           map: map
         });
-
+      
         google.maps.event.addListener(autocomplete, 'place_changed', function() {
           infowindow.close();
           marker.setVisible(false);
@@ -26,7 +26,7 @@
             alert('location not found');
             return;
           }
-
+      
           // If the place has a geometry, then present it on a map.
           if (place.geometry.viewport) {
             map.fitBounds(place.geometry.viewport);
@@ -44,7 +44,7 @@
           marker.setPosition(place.geometry.location);
           $("#Xa").val(place.geometry.location.Xa);
           $("#Ya").val(place.geometry.location.Ya);
-
+      
           var address = '';
           if (place.address_components) {
             address = [
@@ -53,9 +53,9 @@
               (place.address_components[2] && place.address_components[2].short_name || '')
             ].join(' ');
           }
-
+      
           infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
           infowindow.open(map, marker);
         });
       });
-
+      

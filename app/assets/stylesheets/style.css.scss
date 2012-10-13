@@ -33,5 +33,15 @@ body {
       -webkit-border-radius: 4px;
       -moz-border-radius: 4px;    
     }
+    .project-show {
+      .add-todos a {
+        color: #eee;
+        &:hover {text-decoration: none;}
+        &:link {text-decoration: none;}
+        &:visited {text-decoration: none;}
+        font-weight: bold;
+        font-size: 20px;
+      }
+    }
   }
 }

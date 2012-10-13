@@ -2,7 +2,7 @@ class Project < ActiveRecord::Base
    attr_accessible :name, :hashtag, :latitude, :longitude
    validates_presence_of :owner
 
-   belongs_to :owner
+   belongs_to :owner, :class_name => "User"
    has_and_belongs_to_many :user
 
   acts_as_commentable

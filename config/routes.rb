@@ -1,4 +1,6 @@
 R12Team323::Application.routes.draw do
+  resources :friends
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

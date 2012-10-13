@@ -40,6 +40,8 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    faraday (0.8.4)
+      multipart-post (~> 1.1)
     hike (1.2.1)
     i18n (0.6.1)
     journey (1.0.4)
@@ -49,6 +51,9 @@ GEM
     jquery_mobile_rails (1.2.0)
       rails (>= 3.1.0)
     json (1.7.5)
+    koala (1.5.0)
+      faraday (~> 0.7)
+      multi_json (~> 1.3)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -56,6 +61,7 @@ GEM
     mime-types (1.19)
     multi_json (1.3.6)
     mysql (2.8.1)
+    multipart-post (1.1.5)
     polyglot (0.3.3)
     rack (1.4.1)
     rack-cache (1.2)
@@ -109,6 +115,7 @@ DEPENDENCIES
   jquery-rails
   jquery_mobile_rails
   mysql (~> 2.8.1)
+  koala
   rails (= 3.2.8)
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)

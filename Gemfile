@@ -24,6 +24,7 @@ end
 gem 'jquery-rails'
 gem 'jquery_mobile_rails'
 gem 'koala'
+gem 'acts_as_commentable', '3.0.1'
 
 gem 'capistrano'
 group :production do

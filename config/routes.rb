@@ -56,6 +56,7 @@ R12Team323::Application.routes.draw do
   root :to => 'home#index'
   resources :projects do
     get 'dashboard'
+    resources :comments
   end
   resources :users
 

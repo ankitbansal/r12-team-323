@@ -52,6 +52,7 @@ R12Team323::Application.routes.draw do
   # just remember to delete public/index.html.
   root :to => 'home#index'
   resources :projects
+  resources :users
 
   # See how all your routes lay out with "rake routes"
 

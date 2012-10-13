@@ -52,6 +52,7 @@ R12Team323::Application.routes.draw do
   # just remember to delete public/index.html.
   match "/auth/:provider/callback" => "users#create"
   match 'auth/failure', to: redirect('/')
+  match "/signout" => "users#destroy"
   root :to => 'home#index'
   resources :projects
   resources :users

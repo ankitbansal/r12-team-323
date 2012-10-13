@@ -9,7 +9,6 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    p params[:project]
     @project = Project.new(params[:project])
     @project.user = current_user
 
@@ -25,8 +24,9 @@ class ProjectsController < ApplicationController
   end
 
   def index
-    @projects = Project.all
+    @projects = current_user.projects
     @invitations = Invitation.all
+    @joined_projects = Project.all
   end
 
   def show

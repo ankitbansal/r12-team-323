@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessible :provider, :uid
+  has_many :projects
   # attr_accessible :title, :body
   
   def self.create_with_omniauth(auth)

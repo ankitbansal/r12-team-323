@@ -12,6 +12,16 @@
 </ul>
 <ul data-role="listview" data-divider-theme="b" data-inset="true">
   <li data-role="list-divider" role="heading">
+  Joined Projects
+  </li>
+  <% @joined_projects.each do |project| %>
+    <li data-theme="c">
+      <%= link_to "#{project.name}", project_path(project), :'data-transition' => 'slide' %>
+    </li>
+  <% end %>
+</ul>
+<ul data-role="listview" data-divider-theme="b" data-inset="true">
+  <li data-role="list-divider" role="heading">
   Invitations
   </li>
   <% @invitations.each do |invitation| %>

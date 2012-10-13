@@ -22,7 +22,6 @@ class ProjectsController < ApplicationController
   def index
     @projects = Project.all
     @invitations = Invitation.all
-    render :layout => false
   end
 
   def show

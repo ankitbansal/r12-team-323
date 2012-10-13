@@ -16,3 +16,5 @@
 TAGS
 *.mine
 tags
+
+config/database.yml

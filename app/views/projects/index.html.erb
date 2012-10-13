@@ -36,22 +36,26 @@
                     <li data-role="list-divider" role="heading">
                         Your Projects
                     </li>
-                    <li data-theme="c">
-                        <a href="#page1" data-transition="slide">
-                            Rams Party
-                        </a>
-                    </li>
+					<%@projects.each do |project| %>
+						<li data-theme="c">
+                        	<a href="#page1" data-transition="slide">
+                            	<%= project.name %>
+                        	</a>
+                    	</li>
+					<% end %>
                 </ul>
                 <ul data-role="listview" data-divider-theme="b" data-inset="true">
 
                     <li data-role="list-divider" role="heading">
                         Invitations
                     </li>
-                    <li data-theme="c">
+					<%@invitations.each do |invitation| %>
+                    	<li data-theme="c">
                         <a href="#page1" data-transition="slide">
-                            Ankits Party
+                            Some invitation
                         </a>
-                    </li>
+                    	</li>
+					<% end %>
                 </ul>
             </div>
 

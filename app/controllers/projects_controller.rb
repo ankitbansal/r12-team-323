@@ -25,8 +25,8 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = current_user.projects
-    @invitations = Invitation.all
-    @joined_projects = Project.all
+    @invitations = Invitation.where(:accepted => :true)
+    @joined_projects = @invitations.collect(&:project)
   end
 
   def show

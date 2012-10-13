@@ -50,6 +50,8 @@ R12Team323::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
+  match "/auth/:provider/callback" => "users#create"
+  match 'auth/failure', to: redirect('/')
   root :to => 'home#index'
   resources :projects
   resources :users

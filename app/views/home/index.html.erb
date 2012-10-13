@@ -1,1 +1,7 @@
 Howdy! From Large Hadron COllidors
+
+<% if current_user %>
+  Welcome <%= current_user.name %>!
+<% else %>
+  <%= link_to "Sign in with Facebook", "/auth/facebook" %>
+<% end %>

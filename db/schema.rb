@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121013131619) do
+ActiveRecord::Schema.define(:version => 20121013141745) do
 
   create_table "friends", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(:version => 20121013131619) do
     t.string   "name"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "provider"
+    t.string   "uid"
   end
 
 end

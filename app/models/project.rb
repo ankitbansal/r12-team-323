@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-   attr_accessible :name, :hashtag
+   attr_accessible :name, :hashtag, :latitude, :longitude
    validates_presence_of :user
    
    belongs_to :user

@@ -29,8 +29,8 @@
         Location
       </label>
       <input name="" id="searchTextField" placeholder="" value="" type="text" />
-      <input type="hidden" name="project['latitude']" id='Xa'/>
-      <input type="hidden" name="project['longitude']" id='Ya'/>
+		<%= f.hidden_field :latitude, :id => "Xa" %>
+		<%= f.hidden_field :longitude, :id => "Ya" %>
     </fieldset>
   </div>
   <div id="map_canvas" style="height:300px; width:350px"></div>

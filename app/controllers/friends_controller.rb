@@ -3,9 +3,9 @@ class FriendsController < ApplicationController
   # GET /friends.json
 
   def initialize
-    oauth = Koala::Facebook::OAuth.new("363589773728251", "8fad5c5e623e24c8f5f1bb7215fe7b7c", "http://large-hadron-collider.r12.railsrumble.com")
-    code = oauth.url_for_oauth_code
-    @oauth_token = oauth.get_access_token(code) 
+    # oauth = Koala::Facebook::OAuth.new("363589773728251", "8fad5c5e623e24c8f5f1bb7215fe7b7c", "http://large-hadron-collider.r12.railsrumble.com")
+    #    code = oauth.url_for_oauth_code
+    #    @oauth_token = oauth.get_access_token(code) 
   end
 
   def index

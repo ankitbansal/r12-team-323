@@ -24,7 +24,7 @@ class ProjectsController < ApplicationController
   end
 
   def index
-    @projects = current_user.projects
+    @projects = Project.where(:owner_id => current_user)
     @invitations = Invitation.where(:accepted => :true)
     @joined_projects = @invitations.collect(&:project)
   end

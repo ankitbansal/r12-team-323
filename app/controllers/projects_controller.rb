@@ -2,6 +2,10 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    p current_user
+    
+    graph = Koala::Facebook::API.new(oauth_access_token)
+    @friends = graph.get_connections("me", "friends")
   end
 
   def create

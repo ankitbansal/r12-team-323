@@ -10,7 +10,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(params[:project])
-    @project.user = current_user
+    @project.owner = current_user
 
        respond_to do |format|
          if @project.save!
@@ -36,5 +36,9 @@ class ProjectsController < ApplicationController
           format.html # show.html.erb
           format.xml { render :xml => @project }
       end
+  end
+  
+  def dashboard
+    
   end
 end

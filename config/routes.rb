@@ -54,7 +54,9 @@ R12Team323::Application.routes.draw do
   match 'auth/failure', to: redirect('/')
   match "/signout" => "users#destroy"
   root :to => 'home#index'
-  resources :projects
+  resources :projects do
+    get 'dashboard'
+  end
   resources :users
 
   # See how all your routes lay out with "rake routes"

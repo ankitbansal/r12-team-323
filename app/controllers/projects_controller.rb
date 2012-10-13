@@ -1,5 +1,7 @@
 class ProjectsController < ApplicationController
 
+  before_filter :check_for_login
+
   def new
     @project = Project.new
     graph = Koala::Facebook::API.new(session[:token])

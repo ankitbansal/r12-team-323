@@ -38,9 +38,7 @@
                     </li>
 					<%@projects.each do |project| %>
 						<li data-theme="c">
-                        	<a href="#page1" data-transition="slide">
-                            	<%= project.name %>
-                        	</a>
+							<%= link_to "#{project.name}", project_path(project), :'data-transition' => 'slide' %>
                     	</li>
 					<% end %>
                 </ul>
@@ -51,9 +49,9 @@
                     </li>
 					<%@invitations.each do |invitation| %>
                     	<li data-theme="c">
-                        <a href="#page1" data-transition="slide">
+                        	<a href="#page1" data-transition="slide">
                             Some invitation
-                        </a>
+                        	</a>
                     	</li>
 					<% end %>
                 </ul>

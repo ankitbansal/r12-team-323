@@ -1,9 +1,23 @@
-@import "definitions";
+@import "_definitions";
 
 body {
-  .container {
-    border-radius: 8px;
-    margin: 4px;
-    width: auto;
+  div[data-role="page"] {
+    background-color: #264564;
+    .container {
+      margin: 4px;
+      background-color: #ccc;
+      min-height: 480px;
+      border-radius: $radius;
+      -webkit-border-radius: $radius;
+      -moz-border-radius: $radius;
+    }
+    div[data-role="header"] {
+      -webkit-border-top-left-radius: $radius;
+      -webkit-border-top-right-radius: $radius;
+      -moz-border-radius-topleft: $radius;
+      -moz-border-radius-topright: $radius;
+      border-top-left-radius: $radius;
+      border-top-right-radius: $radius;
+    }
   }
 }

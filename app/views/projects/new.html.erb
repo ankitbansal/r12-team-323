@@ -36,14 +36,12 @@
       <legend>
         Invite Your Friends
       </legend>
+	<% @friends.each do |f|%>
       <input id="checkbox5" name="" type="checkbox" />
       <label for="checkbox5">
-        Ram
+        <%= f["name"] %>
       </label>
-      <input id="checkbox6" name="" type="checkbox" />
-      <label for="checkbox6">
-        Garima
-      </label>
+	<% end %>
     </fieldset>
   </div>
   <%= f.submit %>

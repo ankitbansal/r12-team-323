@@ -40,6 +40,10 @@
     color: #2489ce /*{a-bar-link-visited}*/;
 }
 
+#twitter-widget-0 { 
+  width: 100% !important; 
+}
+
 .ui-bar-a a.ui-link:hover {
 	color: #2489ce /*{a-bar-link-hover}*/;
 }
@@ -906,4 +910,3 @@ a.ui-link-inherit {
 	outline-width: 1px;
 	outline-style: auto;
 }
-

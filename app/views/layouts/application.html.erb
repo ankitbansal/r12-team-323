@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>R12Team323</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+<title>R12Team323</title>
+<%= stylesheet_link_tag    "application", :media => "all" %>
+<%= javascript_include_tag "application" %>
+<%= csrf_meta_tags %>
 </head>
 <body>
   <div class="container">
-    <h1>Cotton Mouth</h1>
-    <%= yield %>
+    <div data-role="page" id="page1">
+      <div data-theme="a" data-role="header">
+        <h1> Our Awesome App </h1>
+      </div>
+      <div data-role="content">
+        <%= yield %>
+      </div>
+    </div>
   </div>
 
 </body>

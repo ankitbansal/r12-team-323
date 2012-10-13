@@ -1,31 +1,21 @@
-<!-- Home -->
-<div data-role="page" id="page1">
-  <div data-theme="a" data-role="header">
-    <h1> Unnamed App </h1>
-  </div>
-  <div data-role="content">
-    <a data-role="button" href="projects/new" data-icon="plus" data-iconpos="left"> New Project </a>
-    <ul data-role="listview" data-divider-theme="b" data-inset="true">
-
-      <li data-role="list-divider" role="heading">
-      Your Projects
-      </li>
-      <% @projects.each do |project| %>
-        <li data-theme="c">
-          <%= link_to "#{project.name}", project_path(project), :'data-transition' => 'slide' %>
-        </li>
-      <% end %>
-    </ul>
-    <ul data-role="listview" data-divider-theme="b" data-inset="true">
-      <li data-role="list-divider" role="heading">
-      Invitations
-      </li>
-      <% @invitations.each do |invitation| %>
-        <li data-theme="c">
+<a data-role="button" href="projects/new" data-icon="plus" data-iconpos="left"> New Project </a>
+<ul data-role="listview" data-divider-theme="b" data-inset="true">
+  <li data-role="list-divider" role="heading">
+  Your Projects
+  </li>
+  <% @projects.each do |project| %>
+    <li data-theme="c">
+      <%= link_to "#{project.name}", project_path(project), :'data-transition' => 'slide' %>
+    </li>
+  <% end %>
+</ul>
+<ul data-role="listview" data-divider-theme="b" data-inset="true">
+  <li data-role="list-divider" role="heading">
+  Invitations
+  </li>
+  <% @invitations.each do |invitation| %>
+    <li data-theme="c">
       <%= link_to "#{invitation.invited_by.name} invited you to join #{invitation.project.name}", project_path(project), :'data-transition' => 'slide' %>
-      </li>
-    <% end %>
-    </ul>
-  </div>
-
-</div>
+    </li>
+  <% end %>
+</ul>

@@ -28,9 +28,7 @@
                 </h3>
             </div>
             <div data-role="content">
-                <a data-role="button" href="projects/new" data-icon="plus" data-iconpos="left">
-                    New Project
-                </a>
+				<%= link_to "New Project", new_project_path, :'data-role' => 'button', :'data-icon' => 'plus', :'data-iconpos' => 'left' %>
                 <ul data-role="listview" data-divider-theme="b" data-inset="true">
 
                     <li data-role="list-divider" role="heading">
@@ -49,9 +47,7 @@
                     </li>
 					<%@invitations.each do |invitation| %>
                     	<li data-theme="c">
-                        	<a href="#page1" data-transition="slide">
-                            Some invitation
-                        	</a>
+							<%= link_to "#{invitation.invited_by.name} invited you to join #{invitation.project.name}", project_path(project), :'data-transition' => 'slide' %>
                     	</li>
 					<% end %>
                 </ul>

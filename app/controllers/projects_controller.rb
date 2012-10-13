@@ -2,7 +2,6 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
-    render :layout => false
   end
 
   def create

@@ -7,6 +7,7 @@ class ProjectsController < ApplicationController
   end
 
   def create
+    p params[:project]
     @project = Project.new(params[:project])
     @project.user = current_user
 

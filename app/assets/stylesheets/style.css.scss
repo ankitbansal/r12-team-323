@@ -2,7 +2,7 @@
 
 body {
   div[data-role="page"] {
-    background-color: #264564;
+    background-color: $bk_color;
     .container {
       text-align: center;
       margin: 4px;
@@ -23,6 +23,15 @@ body {
     .checkboxes {
       width: 78%;
       margin: auto;
+    }
+    .ui-collapsible-content {
+      background-color: $bk_color;  
+    }
+    .google_maps {
+      border: 2px solid #272727;
+      border-radius: 4px;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;    
     }
   }
 }

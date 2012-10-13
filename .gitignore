@@ -17,5 +17,5 @@ TAGS
 *.mine
 tags
 .idea
-
+*~
 config/database.yml

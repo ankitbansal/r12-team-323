@@ -28,11 +28,13 @@
       <label for="textinput2">
         Location
       </label>
-      <input name="" id="textinput2" placeholder="" value="" type="text" />
+      <input name="" id="searchTextField" placeholder="" value="" type="text" />
+      <input type="hidden" name="project['latitude']" id='Xa'/>
+      <input type="hidden" name="project['longitude']" id='Ya'/>
     </fieldset>
   </div>
-  <img src="https://maps.googleapis.com/maps/api/staticmap?center=Madison, WI&amp;zoom=14&amp;size=288x200&amp;markers=Madison, WI&amp;sensor=false" width="288" height="200" />
-  <div id="checkboxes3" class="checkboxes" data-role="fieldcontain">
+  <div id="map_canvas" style="height:300px; width:350px"></div>
+  <div id="checkboxes3" data-role="fieldcontain">
     <fieldset data-role="controlgroup" data-type="vertical">
       <legend>
         Invite Your Friends

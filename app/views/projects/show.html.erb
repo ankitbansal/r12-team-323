@@ -8,15 +8,9 @@
       <h3>
         Comments
       </h3>
-      <ul>
-      <%- @project.comments.each do |c| -%>
-	<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="d" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-d">
-	  <div class="ui-btn-inner ui-li">
-	      <p><%= c.comment %></p>
-	  </div>
-	</li>
-	<%- end -%>
-      </ul>
+      <div id="comments_container">
+	<%= render :partial => 'comments' %>
+      </div>
       <div id="new-comments">
       <%= form_for [@project, @comment] do |f|-%>
         <%= f.text_area :comment -%>

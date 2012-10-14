@@ -1,5 +1,10 @@
 body.promo {
   height: 100%;
+  .side-left {
+    float:left;
+    width: 1140px;
+    height: 1000px;
+  }
   #content {
     min-height: 100%;
     height: auto !important;

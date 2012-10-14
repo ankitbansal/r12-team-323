@@ -12,4 +12,12 @@ class ApplicationController < ActionController::Base
   def check_for_login
     redirect_to '/' if !current_user
   end
+
+  def mobile_device?
+    if session[:mobile_param]
+      session[:mobile_param] == "1"
+    else
+      request.user_agent =~ /Mobile|webOS/
+    end
+  end
 end

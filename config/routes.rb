@@ -54,7 +54,7 @@ R12Team323::Application.routes.draw do
   match 'auth/failure', to: redirect('/')
   match "/signout" => "users#destroy"
   resources :todos
-  
+
   resources :projects do
     resources :comments
     member do
@@ -67,6 +67,7 @@ R12Team323::Application.routes.draw do
   resources :invitations
 
   root :to => 'home#index'
+  match '/promo' => 'home#promo'
 
   # See how all your routes lay out with "rake routes"
 

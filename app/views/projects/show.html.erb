@@ -30,7 +30,7 @@
 new TWTR.Widget({
                 version: 2,
                 type: 'search',
-                search: '#manchester',
+                search: '#<%= @project.hashtag %>',
                 rpp: 30,
                 interval: 5000,
                 title: 'Latest Tweets',

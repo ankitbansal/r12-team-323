@@ -4,6 +4,25 @@ body.promo {
     float:left;
     width: 1140px;
     height: 1000px;
+    .title{
+      font-family: 'Montez',cursive;
+      font-size: 200px;
+      height: 240px;
+      left: 145px;
+      position: relative;
+      top: 400px;
+      width: 520px;
+    }
+    .about-tukio {
+      font-family: 'Montez',cursive;
+      
+      color:#0061A0;
+      position: relative;
+      font-size: 32px;
+      top: 400px;
+      left: 100px;
+      width: 720px;
+    }
   }
   #content {
     min-height: 100%;
@@ -126,6 +145,7 @@ body.promo {
   .item ul li a{
       font-size:10px;
       text-decoration:none;
+      cursor: pointer !important;
       letter-spacing:1.5px;
       text-transform:uppercase;
       color:#222;
@@ -137,6 +157,7 @@ body.promo {
   }
   .item ul li a:hover{
       background-color:#fff;
+      cursor: pointer !important;
       color:#444;
       -moz-border-radius:5px;
       -webkit-border-radius:5px;

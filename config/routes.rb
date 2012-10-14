@@ -56,8 +56,10 @@ R12Team323::Application.routes.draw do
   resources :todos
   
   resources :projects do
-    get 'dashboard'
     resources :comments
+    member do
+      get 'dashboard'
+    end
   end
 
   resources :users

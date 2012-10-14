@@ -45,6 +45,7 @@ class ProjectsController < ApplicationController
   end
   
   def dashboard
+    @project = Project.find(params[:id])
     
   end
 end

@@ -35,12 +35,11 @@ new TWTR.Widget({
                 interval: 5000,
                 title: 'Latest Tweets',
                 subject: 'Updated Live',
-                width: 200,
                 height: 300,
                 id: 'lhc-twitter-widget',
                 theme: {
                         shell: {
-                                background: '#8ec1da',
+                                background: '#E5E5E5',
                                 color: '#ffffff'
                         },
                         tweets: {
@@ -58,6 +57,9 @@ new TWTR.Widget({
                         avatars: true,
 			toptweets: true,
 			behavior: 'all'
-		}
+		},
+		ready: function(){
+                  jQuery('div.twtr-doc').css('width', '100%'); 
+                }
 	        }).render().start();
 </script>

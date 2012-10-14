@@ -6,4 +6,9 @@ class CommentsController < ApplicationController
       redirect_to @project
     end
   end
+
+  def index
+    @project = Project.find(params[:project_id])
+    render :template => 'projects/comments', :layout => false
+  end
 end

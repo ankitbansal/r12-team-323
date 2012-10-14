@@ -36,8 +36,8 @@ ActiveRecord::Schema.define(:version => 20121014104254) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "project_id"
-    t.string   "fb_id"
     t.boolean  "accepted"
+    t.string   "fb_id"
   end
 
   create_table "projects", :force => true do |t|

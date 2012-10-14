@@ -26,7 +26,7 @@
       <div id="gallery_container">
 	<ul id="Gallery" class='gallery'>
 	  <% @pics.each do |p| %>
-	  <li><a href=" <%= p.images['standard_resolution']['url'] %>"><img src="<%= p.images['thumbnail']['url'] %>" alt="<%= p.caption['text'] %>" /></a></li>
+	  <li><a href=" <%= p.standard_url %>"><img src="<%= p.thumbnail_url %>" alt="<%= p.caption_text %>" /></a></li>
 	  <% end %>
 
 	</ul>

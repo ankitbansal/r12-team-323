@@ -32,4 +32,26 @@ class InstagramImage
       InstagramImage.new json
     }
   end
+
+  def standard_url
+    if images
+      if images['standard_resolution']
+        if images['standard_resolution']['url']
+          return images['standard_resolution']['url']
+        end
+      end
+    end
+  end
+
+  def thumbnail_url
+    if images and images['thumbnail'] and images['thumbnail']['url']
+      return images['thumbnail']['url']
+    end
+  end
+
+  def caption_text
+    if caption and caption['text']
+      return caption['text']
+    end
+  end
 end

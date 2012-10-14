@@ -28,6 +28,7 @@ class InstagramImage
   end
 
   def self.find_by_tag(tag)
+    tag = tag.sub('#', "")
     JSON.parse(HTTParty.get(find_by_tag_url(tag)).body)["data"].collect { |json|
       InstagramImage.new json
     }

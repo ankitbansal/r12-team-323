@@ -15,7 +15,7 @@ class ProjectsController < ApplicationController
                                  invitation = Invitation.new
                                  invitation.fb_id = JSON.parse(invite)["fb_id"]
                                  invitation
-                               end
+                               end if params[:invites]
                                                                 
        respond_to do |format|
          if @project.save!

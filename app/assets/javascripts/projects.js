@@ -65,7 +65,10 @@
 
 		};
 
+		if(document.getElementById('map_canvas') != null){
+		    
 		setTimeout('initMap()', 2000);
+		}
 	    }
 	    var showLoading = function(){
 		

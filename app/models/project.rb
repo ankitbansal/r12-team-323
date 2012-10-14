@@ -6,6 +6,7 @@ class Project < ActiveRecord::Base
    has_many :todos
    
    has_and_belongs_to_many :users
+   has_many :project_users, :class_name => "ProjectUser", :table_name => "projects_users"
    
    has_many :invitations
    acts_as_commentable

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121014104254) do
+ActiveRecord::Schema.define(:version => 20121014135640) do
 
   create_table "comments", :force => true do |t|
     t.string   "title",            :limit => 50, :default => ""
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(:version => 20121014104254) do
   create_table "projects_users", :id => false, :force => true do |t|
     t.integer "project_id"
     t.integer "user_id"
+    t.boolean "reached"
   end
 
   create_table "todos", :force => true do |t|

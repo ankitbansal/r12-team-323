@@ -59,6 +59,7 @@ R12Team323::Application.routes.draw do
     resources :comments
     member do
       get 'dashboard'
+      get 'reached'
     end
   end
 
@@ -66,8 +67,8 @@ R12Team323::Application.routes.draw do
   
   resources :invitations do
     member do
-      get 'join'
-      get 'cancel'
+      put 'join'
+      put 'cancel'
     end
   end
 

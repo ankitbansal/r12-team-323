@@ -14,6 +14,7 @@ class ProjectsController < ApplicationController
     @project.invitations = params[:invites].values.collect do |invite| 
                                  invitation = Invitation.new
                                  invitation.fb_id = JSON.parse(invite)["fb_id"]
+                                 invitation.accepted = false
                                  invitation
                                end if params[:invites]
                                                                 
@@ -30,7 +31,7 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.where(:owner_id => current_user)
-    @invitations = Invitation.where(:accepted => :true)
+    @invitations = Invitation.where(:accepted => :true, :fb_id => current_user.uid)
     @joined_projects = @invitations.collect(&:project)
   end
 

@@ -1,9 +1,10 @@
-<ul>
+<ul data-role="listview" style="padding:0px;margin:1px">
   <%- @project.comments.each do |c| -%>
-  <li data-corners="false" data-shadow="false" data-wrapperels="div" class="ui-corner-all ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-d">
-    <div class="ui-btn-inner ui-li">
-      <p><%= c.comment %></p>
-    </div>
-  </li>
+    <%- next unless c.persisted? %>
+    <li>
+      <h4><%= c.comment %></h4>
+      <p><%= c.updated_at %></p>
+      <p><strong><%= c.user.try(:name) %></strong></p>
+    </li>
   <%- end -%>
 </ul>

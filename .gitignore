@@ -19,3 +19,5 @@ tags
 .idea
 *~
 config/database.yml
+\#*
+.\#*

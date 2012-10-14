@@ -18,6 +18,21 @@
       <%- end -%>
       </div>
     </div>
+
+    <div data-role="collapsible" data-collapsed="false">
+      <h3>
+        Photo Stream
+      </h3>
+      <div id="gallery_container">
+	<ul id="Gallery" class='gallery'>
+	  <% @pics.each do |p| %>
+	  <li><a href=" <%= p.images['standard_resolution']['url'] %>"><img src="<%= p.images['thumbnail']['url'] %>" alt="<%= p.caption['text'] %>" /></a></li>
+	  <% end %>
+
+	</ul>
+      </div>
+    </div>
+
     <div data-role="collapsible" data-collapsed="false">
       <h3>
         Twitter
@@ -59,7 +74,7 @@ new TWTR.Widget({
 			behavior: 'all'
 		},
 		ready: function(){
-                  jQuery('div.twtr-doc').css('width', '100%'); 
+                  jQuery('div.twtr-doc').css('width', '100%');
                 }
 	        }).render().start();
 </script>

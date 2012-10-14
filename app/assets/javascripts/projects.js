@@ -90,12 +90,12 @@
 	    setTimeout(2000, fetchComments);
 	    $('#new_comment').submit(function(){
 					 showLoading();
-					 $.post($(this).attr('action'), $(this).serialize(), fetchComments).complete(clearMessage);
+				   	 $.post($(this).attr('action'), $(this).serialize(), fetchComments).complete(clearMessage);
 					 return false;
 				     });
 
+	    $("#Gallery a").photoSwipe({ enableMouseWheel: false , enableKeyboard: false });
+	    
 
-
-
-      });
+	});
       

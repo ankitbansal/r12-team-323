@@ -63,6 +63,8 @@ R12Team323::Application.routes.draw do
   end
 
   resources :users
+  
+  resources :invitations
 
   root :to => 'home#index'
 

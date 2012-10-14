@@ -2,6 +2,8 @@
 	    if(typeof google != "undefined") {
 		
 	    
+	initMap = function() {
+		    
         var mapOptions = {
           center: new google.maps.LatLng(-33.8688, 151.2195),
           zoom: 13,
@@ -61,8 +63,10 @@
           infowindow.open(map, marker);
         });
 
-		}
+		};
 
+		setTimeout('initMap()', 2000);
+	    }
 	    var showLoading = function(){
 		
 		$.mobile.loading( 'show');
@@ -94,8 +98,11 @@
 					 return false;
 				     });
 
-	    $("#Gallery a").photoSwipe({ enableMouseWheel: false , enableKeyboard: false });
+	    if($("#Gallery a").length > 0){
+		
 	    
+		$("#Gallery a").photoSwipe({ enableMouseWheel: false , enableKeyboard: false });
+	    }
 
 	});
       

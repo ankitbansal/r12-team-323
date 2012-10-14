@@ -1,13 +1,13 @@
 class Project < ActiveRecord::Base
-   attr_accessible :name, :hashtag, :latitude, :longitude, :invitations, :project_date
+   attr_accessible :name, :hashtag, :latitude, :longitude, :invitations, :project_date, :enable_todo, :enable_comments, :instagram_tag
    validates_presence_of :owner
 
    belongs_to :owner, :class_name => "User"
    has_many :todos
-   
+
    has_and_belongs_to_many :users
    has_many :project_users, :class_name => "ProjectUser", :table_name => "projects_users"
-   
+
    has_many :invitations
    acts_as_commentable
 

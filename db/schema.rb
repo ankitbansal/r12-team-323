@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121014135640) do
+ActiveRecord::Schema.define(:version => 20121014171140) do
 
   create_table "comments", :force => true do |t|
     t.string   "title",            :limit => 50, :default => ""
@@ -43,12 +43,15 @@ ActiveRecord::Schema.define(:version => 20121014135640) do
   create_table "projects", :force => true do |t|
     t.integer  "owner_id"
     t.string   "name"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.string   "hashtag"
     t.float    "latitude"
     t.float    "longitude"
     t.date     "project_date"
+    t.boolean  "enable_todo"
+    t.boolean  "enable_comments"
+    t.string   "instagram_tag"
   end
 
   create_table "projects_users", :id => false, :force => true do |t|

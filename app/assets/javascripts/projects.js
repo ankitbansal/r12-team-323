@@ -1,4 +1,7 @@
       $(function() {
+	    if(typeof google != "undefined") {
+		
+	    
         var mapOptions = {
           center: new google.maps.LatLng(-33.8688, 151.2195),
           zoom: 13,
@@ -57,5 +60,8 @@
           infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
           infowindow.open(map, marker);
         });
+
+		}
+
       });
       

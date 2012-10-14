@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-   attr_accessible :name, :hashtag, :latitude, :longitude, :invitations
+   attr_accessible :name, :hashtag, :latitude, :longitude, :invitations, :project_date
    validates_presence_of :owner
 
    belongs_to :owner, :class_name => "User"

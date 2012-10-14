@@ -1,8 +1,14 @@
       $(function() {
-	    if(typeof google != "undefined") {
-		
 	    
 	initMap = function() {
+	    	    if(google == null)
+			return;
+
+	    if(document.getElementById('map_canvas') ==null)
+		return;
+	    initMap=function(){
+		
+	    };
 		    
         var mapOptions = {
           center: new google.maps.LatLng(-33.8688, 151.2195),
@@ -65,11 +71,16 @@
 
 		};
 
-		if(document.getElementById('map_canvas') != null){
+		
 		    
-		setTimeout('initMap()', 2000);
-		}
-	    }
+		    
+		    
+		    setTimeout('initMap()', 2000);
+		    setTimeout('initMap()', 4000);
+		    setTimeout('initMap()', 6000);
+		    setTimeout('initMap()', 8000);
+		
+	    
 	    var showLoading = function(){
 		
 		$.mobile.loading( 'show');

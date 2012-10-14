@@ -145,7 +145,7 @@ body.promo {
   .item ul li a{
       font-size:10px;
       text-decoration:none;
-      cursor: pointer !important;
+      cursor: default;
       letter-spacing:1.5px;
       text-transform:uppercase;
       color:#222;
@@ -157,7 +157,7 @@ body.promo {
   }
   .item ul li a:hover{
       background-color:#fff;
-      cursor: pointer !important;
+      cursor: default;
       color:#444;
       -moz-border-radius:5px;
       -webkit-border-radius:5px;

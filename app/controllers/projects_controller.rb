@@ -48,6 +48,7 @@ class ProjectsController < ApplicationController
 
   def dashboard
     @project = Project.find(params[:id])
+    @reached_count = @project.project_users.where(:user_id => current_user.id, :reached => true).count
   end
   
   def reached

@@ -9,6 +9,6 @@ class CommentsController < ApplicationController
 
   def index
     @project = Project.find(params[:project_id])
-    render :template => 'projects/comments', :layout => false
+    render :template => 'projects/_comments', :layout => false
   end
 end

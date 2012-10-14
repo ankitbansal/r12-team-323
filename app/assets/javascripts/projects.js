@@ -63,5 +63,39 @@
 
 		}
 
+	    var showLoading = function(){
+		
+		$.mobile.loading( 'show');
+
+	    };
+
+	    var hideLoading = function(){
+		$.mobile.loading( 'hide');
+	    };
+
+	    var fetchComments = function(){
+		showLoading();
+		$.get(window.location + '/comments', function(data) {
+			  $('#comments_container').html(data);
+			  hideLoading();
+		      });
+		
+	    };
+
+	    var clearMessage = function(){
+		$('#comment_comment').val('');
+		
+	    };
+
+	    setTimeout(2000, fetchComments);
+	    $('#new_comment').submit(function(){
+					 showLoading();
+					 $.post($(this).attr('action'), $(this).serialize(), fetchComments).complete(clearMessage);
+					 return false;
+				     });
+
+
+
+
       });
       

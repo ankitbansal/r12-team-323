@@ -1,8 +1,8 @@
-Howdy! From Large Hadron COllidors
-
 <% if current_user %>
   Welcome <%= current_user.name %>!
   <%= link_to "Sign Out", signout_path %>
 <% else %>
+<div id="signin-text">
   <%= link_to "Sign in with Facebook", "/auth/facebook" , :id => "login_link" %>
+</div>
 <% end %>

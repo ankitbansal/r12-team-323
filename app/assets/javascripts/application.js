@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.mobile
+//= require klass.min
+//= require code.photoswipe.jquery-3.0.5
 //= require_tree .

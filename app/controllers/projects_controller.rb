@@ -11,12 +11,12 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(params[:project])
     @project.owner = current_user
-    @project.invitations = params[:invites].values.collect do |invite| 
+    @project.invitations = params[:invites].values.collect do |invite|
                                  invitation = Invitation.new
                                  invitation.fb_id = JSON.parse(invite)["fb_id"]
                                  invitation
                                end if params[:invites]
-                                                                
+
        respond_to do |format|
          if @project.save!
            format.html { redirect_to(@project, :notice => 'Project was successfully created.') }
@@ -38,15 +38,16 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @comment = @project.comments.new
+    @pics =
 
       respond_to do |format|
           format.html # show.html.erb
           format.xml { render :xml => @project }
       end
   end
-  
+
   def dashboard
     @project = Project.find(params[:id])
-    
+
   end
 end

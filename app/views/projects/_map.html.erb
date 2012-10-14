@@ -2,5 +2,5 @@
   Map
 </h3>
 <img class="google_maps" src="https://maps.googleapis.com/maps/api/staticmap?center=<%= @project.latitude%>,<%= @project.longitude%>&amp;zoom=14&amp;size=288x200&amp;
-markers=<%= @project.latitude%>,<%= @project.longitude%>&amp;sensor=false" width="288" height="200" />
+markers=<%= @project.latitude%>,<%= @project.longitude%>&amp;sensor=false" width="270" height="200" />
 <%= link_to "I am there", reached_project_path(@project), :'data-role' => "button", :'data-direction' =>"reverse", :'data-icon' => "check", :'data-iconpos' => "left"%>

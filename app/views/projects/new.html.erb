@@ -39,7 +39,7 @@
       <legend>
         Invite Your Friends
       </legend>
-	<% @friends.each do |f|%>
+	<% @friends.first(10).each do |f|%>
       <input id="checkbox<%= f['id'] %>" name="invites[<%=@friends.index(f)%>]" value='{"fb_id" : "<%=f['id']%>"}' type="checkbox" />
       <label for="checkbox<%= f['id'] %>">
         <%= f["name"] %>

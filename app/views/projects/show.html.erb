@@ -22,7 +22,42 @@
       <h3>
         Twitter
       </h3>
-      
+      <div id="lhc-twitter-widget"></div>
     </div>
   </div>
 </div>
+<script>
+new TWTR.Widget({
+                version: 2,
+                type: 'search',
+                search: '#manchester',
+                rpp: 30,
+                interval: 5000,
+                title: 'Latest Tweets',
+                subject: 'Updated Live',
+                width: 200,
+                height: 300,
+                id: 'lhc-twitter-widget',
+                theme: {
+                        shell: {
+                                background: '#8ec1da',
+                                color: '#ffffff'
+                        },
+                        tweets: {
+                                background: '#ffffff',
+                                color: '#000000',
+                                links: '#1985b5'
+                        }
+                },
+                features: {
+                        scrollbar: true,
+                        loop: true,
+                        live: true,
+                        hashtags: true,
+                        timestamp: true,
+                        avatars: true,
+			toptweets: true,
+			behavior: 'all'
+		}
+	        }).render().start();
+</script>

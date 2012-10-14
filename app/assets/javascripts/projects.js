@@ -84,6 +84,7 @@
 		showLoading();
 		$.get(window.location + '/comments', function(data) {
 			  $('#comments_container').html(data);
+			  $('#comments_container').trigger('create');
 			  hideLoading();
 		      });
 		

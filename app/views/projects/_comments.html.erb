@@ -3,7 +3,7 @@
     <%- next unless c.persisted? %>
     <li>
       <h4><%= c.comment %></h4>
-      <p><%= c.updated_at %></p>
+      <p><%= time_ago_in_words c.updated_at %></p>
       <p><strong><%= c.user.try(:name) %></strong></p>
     </li>
   <%- end -%>

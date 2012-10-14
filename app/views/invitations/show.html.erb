@@ -9,5 +9,7 @@
         Date  <%=@invitation.project.project_date%>
     </h3>
 
-	
+	<h3>Going </h3>
+	<%= link_to "Join",  join_invitation_path(@invitation), :'data-role' => 'button', :'data-icon' => 'create' %>
+	<%= link_to "Cancel", cancel_invitation_path(@invitation), :'data-role' => 'button', :'data-icon' => 'delete' %>
 </div>

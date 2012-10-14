@@ -64,7 +64,12 @@ R12Team323::Application.routes.draw do
 
   resources :users
   
-  resources :invitations
+  resources :invitations do
+    member do
+      get 'join'
+      get 'cancel'
+    end
+  end
 
   root :to => 'home#index'
   match '/promo' => 'home#promo'

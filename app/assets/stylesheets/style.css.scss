@@ -20,6 +20,10 @@ body {
       border-top-left-radius: $radius;
       border-top-right-radius: $radius;
     }
+    div[data-role="content"] {
+      margin: 1% 1% auto;
+      padding: 0px;
+    }
     .checkboxes {
       width: 78%;
       margin: auto;

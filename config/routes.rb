@@ -72,8 +72,8 @@ R12Team323::Application.routes.draw do
 
   resources :invitations do
     member do
-      put 'join'
-      put 'cancel'
+      get 'join'
+      get 'cancel'
     end
   end
 

@@ -1,4 +1,74 @@
       $(function() {
+
+		
+	    
+	    var showLoading = function(){
+		
+		$.mobile.loading( 'show');
+
+	    };
+
+	    var hideLoading = function(){
+		$.mobile.loading( 'hide');
+	    };
+
+	    var fetchComments = function(){
+		showLoading();
+		$.get(window.location + '/comments', function(data) {
+			  $('#comments_container').html(data);
+			  $('#comments_container').trigger('create');
+			  hideLoading();
+		      });
+		
+	    };
+
+	    var fetchTodos = function() {
+		
+		showLoading();
+			$.get(window.location + '/todos', function(data) {
+			  $('#todo_contiiner').html(data);
+			  $('#todo_contiiner').trigger('create');
+			  hideLoading();
+		      });
+	    };
+
+	    var clearMessage = function(){
+		$('#comment_comment').val('');
+		
+	    };
+
+	    var clearTodo = function(){
+		$('#todo_task').val('');
+		
+	    };
+
+
+	    setTimeout('2000', fetchComments);
+	    $('#new_comment').submit(function(){
+					 showLoading();
+				   	 $.post($(this).attr('action'), $(this).serialize(), fetchComments).complete(clearMessage);
+					 return false;
+				     });
+
+
+
+	    $('#new_todo').submit(function(){
+					 showLoading();
+				   	 $.post($(this).attr('action'), $(this).serialize(), fetchTodos).complete(clearTodo);
+					 return false;
+				     });
+
+
+	    if($("#Gallery a").length > 0){
+		
+	    
+		$("#Gallery a").photoSwipe({ enableMouseWheel: false , enableKeyboard: false });
+	    }
+
+	    $('.todo_checkboxes').live('change', function(){
+					   $.post(window.location + "/todos/" + $(this).val() + "/flip");
+				       });
+
 	    
 	initMap = function() {
 	    	    if(google == null)
@@ -71,6 +141,7 @@
 
 		};
 
+
 		
 		    
 		    
@@ -79,74 +150,6 @@
 		    setTimeout('initMap()', 4000);
 		    setTimeout('initMap()', 6000);
 		    setTimeout('initMap()', 8000);
-		
-	    
-	    var showLoading = function(){
-		
-		$.mobile.loading( 'show');
-
-	    };
-
-	    var hideLoading = function(){
-		$.mobile.loading( 'hide');
-	    };
-
-	    var fetchComments = function(){
-		showLoading();
-		$.get(window.location + '/comments', function(data) {
-			  $('#comments_container').html(data);
-			  $('#comments_container').trigger('create');
-			  hideLoading();
-		      });
-		
-	    };
-
-	    var fetchTodos = function() {
-		
-		showLoading();
-			$.get(window.location + '/todos', function(data) {
-			  $('#todo_contiiner').html(data);
-			  $('#todo_contiiner').trigger('create');
-			  hideLoading();
-		      });
-	    };
-
-	    var clearMessage = function(){
-		$('#comment_comment').val('');
-		
-	    };
-
-	    var clearTodo = function(){
-		$('#todo_task').val('');
-		
-	    };
-
-
-	    setTimeout('2000', fetchComments);
-	    $('#new_comment').submit(function(){
-					 showLoading();
-				   	 $.post($(this).attr('action'), $(this).serialize(), fetchComments).complete(clearMessage);
-					 return false;
-				     });
-
-
-
-	    $('#new_todo').submit(function(){
-					 showLoading();
-				   	 $.post($(this).attr('action'), $(this).serialize(), fetchTodos).complete(clearTodo);
-					 return false;
-				     });
-
-
-	    if($("#Gallery a").length > 0){
-		
-	    
-		$("#Gallery a").photoSwipe({ enableMouseWheel: false , enableKeyboard: false });
-	    }
-
-	    $('.todo_checkboxes').live('change', function(){
-					   $.post(window.location + "/todos/" + $(this).val() + "/flip");
-				       });
 
 	});
       

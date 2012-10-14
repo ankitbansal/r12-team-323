@@ -1,0 +1,6 @@
+    <% @todos.each do |todo| %>
+    <input id="checkbox_<%= todo.id %>" class="todo_checkboxes" name="todo_name_<%= todo.id %>" value="<%= todo.id %>" type="checkbox" <%= todo.done ? "checked=checked" :"" %> />
+                        <label for="checkbox_<%= todo.id %>">
+                            <%= todo.task %>
+                        </label>
+<% end %>

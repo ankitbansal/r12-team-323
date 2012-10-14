@@ -90,10 +90,26 @@
 		
 	    };
 
+	    var fetchTodos = function() {
+		
+		showLoading();
+			$.get(window.location + '/todos', function(data) {
+			  $('#todo_contiiner').html(data);
+			  $('#todo_contiiner').trigger('create');
+			  hideLoading();
+		      });
+	    };
+
 	    var clearMessage = function(){
 		$('#comment_comment').val('');
 		
 	    };
+
+	    var clearTodo = function(){
+		$('#todo_task').val('');
+		
+	    };
+
 
 	    setTimeout('2000', fetchComments);
 	    $('#new_comment').submit(function(){
@@ -102,11 +118,24 @@
 					 return false;
 				     });
 
+
+
+	    $('#new_todo').submit(function(){
+					 showLoading();
+				   	 $.post($(this).attr('action'), $(this).serialize(), fetchTodos).complete(clearTodo);
+					 return false;
+				     });
+
+
 	    if($("#Gallery a").length > 0){
 		
 	    
 		$("#Gallery a").photoSwipe({ enableMouseWheel: false , enableKeyboard: false });
 	    }
+
+	    $('.todo_checkboxes').live('change', function(){
+					   $.post(window.location + "/todos/" + $(this).val() + "/flip");
+				       });
 
 	});
       

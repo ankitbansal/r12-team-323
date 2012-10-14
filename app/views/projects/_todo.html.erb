@@ -2,41 +2,23 @@
   <h3>
     Todo
   </h3>
-  <div id="checkboxes-1" data-role="fieldcontain" class="task-checkboxes">
+
+  <div id="todo_contiiner">
+       <!-- data-role="fieldcontain" class="task-checkboxes"> -->
+       <%= render :partial => 'todo_list' %>
+
   </div>
-  
+
+
   <%= form_for @project.todos.build do |todo| %>
   <div data-role="fieldcontain" class="add-todos">
     <fieldset data-role="controlgroup">
         <label for="textinput1"></label>
         <%= todo.text_field :task %>
         <%= todo.hidden_field :project_id, :value => @project.id %>
-        <%= link_to "+", "#", :id => "add-todo-link" %>
+	<br/>
+	<%= todo.submit %>
     </fieldset>
   </div>
   <% end -%>
 </div>
-<script>
-var populateTasks = function() {
-  $(".task-checkboxes").html("");
-  $.get("/todos?project_id=<%= @project.id %>", function(data) {
-    var html = "<div class='ui-checkbox'><input type='checkbox' name='' id='checkbox1'><label for='checkbox1' data-corners='true' data-shadow='false' data-iconshadow='true' data-iconsize='18' data-wrapperels='span' data-icon='checkbox-off' data-theme='c' class='ui-btn ui-btn-corner-all ui-btn-icon-left ui-checkbox-off ui-btn-up-c'><span class='ui-btn-inner ui-btn-corner-all'><span class='ui-btn-text'>Checkbox</span><span class='ui-icon ui-icon-checkbox-off ui-icon-shadow ui-iconsize-18'>&nbsp;</span></span></label></div>"
-    $.each(data, function(index) {
-      var todo = data[index];
-      var task_body = $(html);
-      $(task_body).find("span.ui-btn-text").html(todo.task);
-      $(".task-checkboxes").append(task_body);
-    });
-
-  });
-};
-$(function(){
-  populateTasks();
-  $('#new_todo').submit(function (event) { return false; })
-  $("#add-todo-link").live('click', function(){
-      $.post('/todos', $("#new_todo").serialize(), function(){}).
-        success(populateTasks()).
-        error(function(){alert("Try again! An error occurred")});
-  });
-});
-</script>

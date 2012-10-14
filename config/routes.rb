@@ -57,6 +57,11 @@ R12Team323::Application.routes.draw do
 
   resources :projects do
     resources :comments
+    resources :todos do
+      member do
+        post 'flip'
+      end
+    end
     member do
       get 'dashboard'
       get 'reached'
@@ -64,7 +69,7 @@ R12Team323::Application.routes.draw do
   end
 
   resources :users
-  
+
   resources :invitations do
     member do
       put 'join'

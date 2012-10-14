@@ -39,6 +39,8 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @comment = @project.comments.new
     @pics = InstagramImage.find_by_tag("fail")
+    @todos = Todo.find_all_by_project_id(@project.id)
+
 
       respond_to do |format|
           format.html # show.html.erb
@@ -50,7 +52,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @reached_count = @project.project_users.where(:user_id => current_user.id, :reached => true).count
   end
-  
+
   def reached
     @project = Project.find(params[:id])
     project_user = @project.project_users.where(:user_id => current_user.id).first

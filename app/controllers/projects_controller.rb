@@ -38,7 +38,7 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @comment = @project.comments.new
-    @pics = InstagramImage.find_by_tag("fail")
+    @pics = InstagramImage.find_by_tag(@project.instagram_tag)
     @todos = Todo.find_all_by_project_id(@project.id)
 
 

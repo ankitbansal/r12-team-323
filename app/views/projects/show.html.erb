@@ -1,9 +1,13 @@
 <div data-role="content" class="project-show">
   <div data-role="collapsible-set">
+    <% if @project.enable_todo %>
+
     <%= render :partial => "todo" %>
     <div data-role="collapsible" data-collapsed="false">
       <%= render :partial => 'map' %>
     </div>
+    <% end %>
+    <% if @project.enable_comments %>
     <div data-role="collapsible" data-collapsed="false">
       <h3>
         Comments
@@ -18,6 +22,7 @@
       <%- end -%>
       </div>
     </div>
+    <% end %>
 
     <div data-role="collapsible" data-collapsed="false">
       <h3>
@@ -33,7 +38,7 @@
       </div>
     </div>
 
-    <div data-role="collapsible" data-collapsed="false">
+    <div data-role="collapsible" data-collapsed="true">
       <h3>
         Twitter
       </h3>

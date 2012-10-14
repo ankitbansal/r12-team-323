@@ -1,14 +1,12 @@
 body.signin{
+  height : 100%;
   .front-page {
-  background: grey url('home.jpg') no-repeat center center;
-  -webkit-background-size:cover;
-  -moz-background-size:cover;
-  background-size:cover;
+  background: grey url('home.jpeg') repeat center center;
   text-align:center;
 
 #signin-text{
   margin: 20% auto;
-  height: 140px;
+  height: 500px;
 }
 
 #apptitle{
@@ -25,6 +23,7 @@ body.signin{
 }
 .ui-content{
     background: transparent;
+    padding: 0px;
 }
 
 }

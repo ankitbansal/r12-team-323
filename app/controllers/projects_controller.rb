@@ -54,7 +54,7 @@ class ProjectsController < ApplicationController
   def reached
     @project = Project.find(params[:id])
     project_user = @project.project_users.where(:user_id => current_user.id).first
-    project_user.update_reached_flag(true)
+    project_user.update_reached_flag(true) if project_user.present?
     redirect_to projects_path(current_user)
   end
 end

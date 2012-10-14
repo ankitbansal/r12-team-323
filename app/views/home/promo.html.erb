@@ -89,4 +89,20 @@
     </div>
   </div>
 </div>
-<div class="iphone_template"></div>
+<div class="iphone_template">
+  <span class="screenshots image_slider">
+    <%= image_tag "template/1.PNG" %>
+    <%= image_tag "template/2.PNG", :style => "display:none;" %>
+    <%= image_tag "template/3.PNG", :style => "display:none;" %>
+  </span>
+</div>
+
+<script>
+$(function(){
+  $('.image_slider img:gt(0)').hide();
+  setInterval(function(){
+    $('.image_slider :first-child').hide().next('img').
+      fadeIn("slow").end().appendTo('.image_slider');
+  }, 4000);
+});
+</script>

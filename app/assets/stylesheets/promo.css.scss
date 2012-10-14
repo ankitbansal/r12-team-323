@@ -15,6 +15,13 @@ body.promo {
       float:right;
       width: 488px;
       height: 702px;
+      padding: 10px;
+      .screenshots {
+        img {
+          width: 310px;
+          margin:119px 87px;
+        }
+      }
     }
   }
   .footer, {

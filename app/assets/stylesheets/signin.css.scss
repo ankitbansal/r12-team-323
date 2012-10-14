@@ -1,7 +1,31 @@
-body{
-background-image: url('/assets/home.jpg') ! important;
-}
+body.signin{
+  background: grey;
+  background-image: url('/assets/home.jpg');
+  background-repeat: no-repeat;
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  background-size:cover;
 
 #signin-text{
-padding-top: 50px;
+  margin-top: 18%;
+  margin-left: 8%;
+  float: left;
+}
+
+#apptitle{
+  font-family: 'Montez',cursive;
+  color: white;
+  float: left;
+  font-size: 50px;
+  margin-top: 18%;
+  margin-left: 8%;
+}
+
+.ui-page {
+    background: transparent;
+}
+.ui-content{
+    background: transparent;
+}
+
 }

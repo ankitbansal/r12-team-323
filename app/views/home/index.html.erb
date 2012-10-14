@@ -1,8 +1,11 @@
+<div class="front-page">
+<span id="apptitle">Tukio.me</span>
 <% if current_user %>
   Welcome <%= current_user.name %>!
   <%= link_to "Sign Out", signout_path %>
 <% else %>
 <div id="signin-text">
-  <%= link_to "Sign in with Facebook", "/auth/facebook" , :id => "login_link" %>
+<a href="/auth/facebook" data-role="button" data-theme="b" data-inline="true">Sign In with Facebook</a>
 </div>
 <% end %>
+</div>

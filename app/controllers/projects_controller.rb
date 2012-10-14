@@ -38,7 +38,7 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @comment = @project.comments.new
-    @pics =
+    @pics = InstagramImage.find_by_tag("fail")
 
       respond_to do |format|
           format.html # show.html.erb

@@ -31,8 +31,9 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.where(:owner_id => current_user)
-    @invitations = Invitation.where(:accepted => :true, :fb_id => current_user.uid)
-    @joined_projects = @invitations.collect(&:project)
+    @invitations = Invitation.where(:accepted => false, :fb_id => current_user.uid)
+    @accepted_invitations = Invitation.where(:accepted => true, :fb_id => current_user.uid)
+    @joined_projects = @accepted_invitations.collect(&:project)
   end
 
   def show

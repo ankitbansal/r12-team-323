@@ -1,24 +1,23 @@
 body.signin{
-  background: grey;
-  background-image: url('/assets/home.jpg');
-  background-repeat: no-repeat;
+  .front-page {
+  background: grey url('home.jpg') no-repeat center center;
   -webkit-background-size:cover;
   -moz-background-size:cover;
   background-size:cover;
+  text-align:center;
 
 #signin-text{
-  margin-top: 18%;
-  margin-left: 8%;
-  float: left;
+  margin: 20% auto;
+  height: 140px;
 }
 
 #apptitle{
   font-family: 'Montez',cursive;
   color: white;
-  float: left;
-  font-size: 50px;
-  margin-top: 18%;
-  margin-left: 8%;
+  font-size: 60px;
+  margin-top: 50%;
+  margin-left: 4%;
+}
 }
 
 .ui-page {

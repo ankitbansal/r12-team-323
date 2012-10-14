@@ -7,4 +7,7 @@ class HomeController < ApplicationController
 
   def promo
   end
+  def promo
+    render :layout => 'promo'
+  end
 end

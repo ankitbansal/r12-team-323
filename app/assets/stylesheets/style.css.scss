@@ -1,6 +1,6 @@
 @import "_definitions";
 
-body {
+body.application {
   div[data-role="page"] {
     background-color: $bk_color;
     .container {

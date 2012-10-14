@@ -71,6 +71,7 @@ R12Team323::Application.routes.draw do
     end
   end
 
+  match 'promo' => 'home#promo'
   root :to => 'home#index'
   match '/promo' => 'home#promo'
 
